@@ -22,7 +22,11 @@
   "dependencies": {
     "@nestjs/common": "^10.0.0",
     "@nestjs/core": "^10.0.0",
+    "@nestjs/graphql": "^12.1.1",
+    "@nestjs/mercurius": "^12.1.1",
     "@nestjs/platform-express": "^10.0.0",
+    "graphql": "^16.8.2",
+    "mercurius": "^14.1.0",
     "reflect-metadata": "^0.2.0",
     "rxjs": "^7.8.1"
   },
