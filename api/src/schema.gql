@@ -1,0 +1,17 @@
+# ------------------------------------------------------
+# THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
+# ------------------------------------------------------
+
+type Task {
+  id: Int!
+  name: String!
+  dueData: String!
+  status: String!
+
+  """タスクの説明"""
+  description: String
+}
+
+type Query {
+  getTasks: [Task]!
+}
