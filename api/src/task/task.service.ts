@@ -6,14 +6,18 @@ export class TaskService {
   tasks: Task[] = [];
 
   getTasks(): Task[] {
-    const task1 = new Task();
-    task1.id = 1;
-    task1.name = 'task1';
-    task1.dueData = '2021-01-01';
-    task1.status = 'NOT_STARTED';
-    task1.description = 'This is task1';
-    this.tasks.push(task1);
-
     return this.tasks;
+  }
+
+  createTask(name: string, dueDate: string, description?: string): Task {
+    const task = new Task();
+    task.id = this.tasks.length + 1;
+    task.name = name;
+    task.dueData = dueDate;
+    task.status = 'NOT_STARTED';
+    task.description = description;
+    this.tasks.push(task);
+
+    return task;
   }
 }
