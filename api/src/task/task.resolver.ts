@@ -1,6 +1,7 @@
 import { Args, Mutation, Query, Resolver } from '@nestjs/graphql';
 import { Task } from '@prisma/client';
 import { CreateTaskInput } from 'src/task/dto/createTask.input';
+import { DeleteTaskInput } from 'src/task/dto/deleteTask.input';
 import { UpdateTaskInput } from 'src/task/dto/updatetask.input';
 import { Task as TaskModel } from 'src/task/models/task.model';
 import { TaskService } from 'src/task/task.service';
@@ -26,5 +27,12 @@ export class TaskResolver {
     @Args('updateTaskInput') updateTaskInput: UpdateTaskInput,
   ): Promise<Task> {
     return await this.taskService.updateTask(updateTaskInput);
+  }
+
+  @Mutation(() => TaskModel)
+  async deleteTask(
+    @Args('deleteTaskInput') deleteTaskInput: DeleteTaskInput,
+  ): Promise<Task> {
+    return await this.taskService.deleteTask(deleteTaskInput.id);
   }
 }
