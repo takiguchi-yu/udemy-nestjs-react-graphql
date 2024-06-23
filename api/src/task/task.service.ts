@@ -2,6 +2,7 @@ import { Injectable } from '@nestjs/common';
 import { Task } from '@prisma/client';
 import { PrismaService } from 'src/prisma/prisma.service';
 import { CreateTaskInput } from 'src/task/dto/createTask.input';
+import { UpdateTaskInput } from 'src/task/dto/updatetask.input';
 
 @Injectable()
 export class TaskService {
@@ -18,6 +19,21 @@ export class TaskService {
         name,
         dueDate,
         status: 'NOT_STARTED',
+        description,
+      },
+    });
+  }
+
+  async updateTask(updateTaskInput: UpdateTaskInput): Promise<Task> {
+    const { id, name, dueDate, status, description } = updateTaskInput;
+    return await this.prismaService.task.update({
+      where: {
+        id,
+      },
+      data: {
+        name,
+        dueDate,
+        status,
         description,
       },
     });
