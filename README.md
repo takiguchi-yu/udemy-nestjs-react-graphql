@@ -18,6 +18,7 @@ v20.13.0
 - プログラム言語: TypeScript
 - フロントエンドフレームワーク: NextJS
 - バックエンドフレームワーク: NestJS
+- スタイリング: CSS Modules
 - HTTP サーバ: Fastify
 - GraphQL パッケージ: Mercurius
 - ORM: Prisma
