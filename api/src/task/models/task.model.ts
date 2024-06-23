@@ -1,4 +1,5 @@
 import { Field, Int, ObjectType } from '@nestjs/graphql';
+import { Status } from '@prisma/client';
 
 @ObjectType()
 export class Task {
@@ -9,10 +10,10 @@ export class Task {
   name: string;
 
   @Field()
-  dueData: string;
+  dueDate: string;
 
   @Field()
-  status: 'NOT_STARTED' | 'IN_PROGRESS' | 'COMPLETED';
+  status: Status;
 
   @Field({
     nullable: true,
@@ -20,4 +21,10 @@ export class Task {
     defaultValue: '説明なし',
   })
   description: string;
+
+  @Field()
+  createdAt: Date;
+
+  @Field()
+  updatedAt: Date;
 }
