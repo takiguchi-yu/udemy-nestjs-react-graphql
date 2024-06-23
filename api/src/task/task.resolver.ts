@@ -1,4 +1,4 @@
-import { Args, Mutation, Query, Resolver } from '@nestjs/graphql';
+import { Args, Int, Mutation, Query, Resolver } from '@nestjs/graphql';
 import { Task } from '@prisma/client';
 import { CreateTaskInput } from 'src/task/dto/createTask.input';
 import { DeleteTaskInput } from 'src/task/dto/deleteTask.input';
@@ -11,8 +11,10 @@ export class TaskResolver {
   constructor(private readonly taskService: TaskService) {}
 
   @Query(() => [TaskModel], { nullable: 'items' })
-  async getTasks(): Promise<Task[]> {
-    return await this.taskService.getTasks();
+  async getTasks(
+    @Args('userId', { type: () => Int }) userId: number,
+  ): Promise<Task[]> {
+    return await this.taskService.getTasks(userId);
   }
 
   @Mutation(() => TaskModel)
