@@ -1,4 +1,3 @@
-import NotFound from "@/components/NotFound";
 import SignIn from "@/components/SignIn";
 import SignUp from "@/components/SignUp";
 import Main from "@/components/Main";
@@ -10,7 +9,6 @@ export default function Home() {
       <SignIn />
       <SignUp />
       <Main />
-      <NotFound />
     </main>
   );
 }
