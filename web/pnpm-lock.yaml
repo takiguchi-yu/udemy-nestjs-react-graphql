@@ -20,6 +20,15 @@ importers:
       '@mui/material':
         specifier: ^5.15.20
         version: 5.15.20(@emotion/react@11.11.4(@types/react@18.3.3)(react@18.3.1))(@emotion/styled@11.11.5(@emotion/react@11.11.4(@types/react@18.3.3)(react@18.3.1))(@types/react@18.3.3)(react@18.3.1))(@types/react@18.3.3)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+      '@urql/core':
+        specifier: ^5.0.4
+        version: 5.0.4(graphql@16.9.0)
+      '@urql/exchange-auth':
+        specifier: ^2.2.0
+        version: 2.2.0(@urql/core@5.0.4(graphql@16.9.0))
+      '@urql/next':
+        specifier: ^1.1.1
+        version: 1.1.1(next@14.2.4(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react@18.3.1)(urql@4.1.0(@urql/core@5.0.4(graphql@16.9.0))(react@18.3.1))
       graphql:
         specifier: ^16.9.0
         version: 16.9.0
@@ -498,6 +507,18 @@ packages:
 
   '@urql/core@5.0.4':
     resolution: {integrity: sha512-gl86J6B6gWXvvkx5omZ+CaGiPQ0chCUGM0jBsm0zTtkDQPRqufv0NSUN6sp2JhGGtTOB0NR6Pd+w7XAVGGyUOA==}
+
+  '@urql/exchange-auth@2.2.0':
+    resolution: {integrity: sha512-4bJR22EYa/flbhwMBj4lU8MI4cO3ddo/DX7FygWeaeHZU+RWfnQKifCKwxIYlnoV8/CgYRM4lFSMIByYlhmWcg==}
+    peerDependencies:
+      '@urql/core': ^5.0.0
+
+  '@urql/next@1.1.1':
+    resolution: {integrity: sha512-dLk4npLZeWDCevua3gM5f8WS1IyyJUsjOvUU9tnFRSjTSn2fQcgYAYZbLfpneLTg+1rYNCLgSMJMuBr95PofTQ==}
+    peerDependencies:
+      next: '>=13.0.0'
+      react: '>=18.0.0'
+      urql: ^4.0.0
 
   acorn-jsx@5.3.2:
     resolution: {integrity: sha512-rq9s+JNhf0IChjtDXxllJ7g41oZk5SlXtp0LHwyA5cejwn7vKmKp4pPri6YEePv2PU65sAsegbXtIinmDFDXgQ==}
@@ -2213,6 +2234,17 @@ snapshots:
       wonka: 6.3.4
     transitivePeerDependencies:
       - graphql
+
+  '@urql/exchange-auth@2.2.0(@urql/core@5.0.4(graphql@16.9.0))':
+    dependencies:
+      '@urql/core': 5.0.4(graphql@16.9.0)
+      wonka: 6.3.4
+
+  '@urql/next@1.1.1(next@14.2.4(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react@18.3.1)(urql@4.1.0(@urql/core@5.0.4(graphql@16.9.0))(react@18.3.1))':
+    dependencies:
+      next: 14.2.4(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+      react: 18.3.1
+      urql: 4.1.0(@urql/core@5.0.4(graphql@16.9.0))(react@18.3.1)
 
   acorn-jsx@5.3.2(acorn@8.12.0):
     dependencies:
